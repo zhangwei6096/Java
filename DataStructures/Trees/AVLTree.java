@@ -202,6 +202,22 @@ public class AVLTree {
         }
     }
 
+    private void printTree(Node n){
+        System.out.println("key:"+n.key);
+
+
+        if(n.left != null){
+            System.out.println("key:"+n.key +",left:"+n.left.key);
+            printTree(n.left);
+        }
+        if(n.right != null){
+            System.out.println("key:"+n.key +",right:"+n.right.key);
+            printTree(n.right);
+        }
+
+    }
+
+
     public static void main(String[] args) {
         AVLTree tree = new AVLTree();
 
@@ -211,5 +227,7 @@ public class AVLTree {
 
         System.out.print("Printing balance: ");
         tree.printBalance();
+        System.out.println("printTree: ");
+        tree.printTree(tree.root);
     }
 }
